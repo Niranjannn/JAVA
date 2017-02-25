@@ -1,0 +1,70 @@
+//Temperature Conversion
+
+import java.util.Scanner;
+
+public class TempConversion
+{
+	public static void main(String[] args)
+	{
+        //Create Scanner Objects
+		Scanner input = new Scanner(System.in);
+
+        //Delcare variables
+		int n;
+		double c;
+		double f;
+
+        //User prompt for conversion
+	    System.out.print("\nWelcome to Temperature Conversion Table\n\n(1) Fahrenheit to Celsius, (2) Celsius to Fahrenheit \n Enter your choice: ");   
+        n=input.nextInt();
+              
+            switch(n)
+            {
+                case 1: 
+            			System.out.print("\nEnter the maximum temperature in Fahrenheit: ");   //User prompt for temperature
+            			f=input.nextDouble();
+                        if(f<0)
+                        {
+                           System.out.print("\n Fahrenheit | Celsius \n ---------------------");
+                            for(double x=0;x>=f;x-=5)
+                            {
+                                c=(5.0/9.0)*(x-32);
+                                System.out.printf("\n        %.2f | %.2f",x,c);
+                            } 
+                        }
+                        else
+                        {
+            			 System.out.print("\n Fahrenheit | Celsius \n ---------------------");
+                	       for(double x=0;x<=f;x+=5)
+                		  {
+                			c=(5.0/9.0)*(x-32);
+                			System.out.printf("\n      %.2f | %.2f",x,c);
+                		  }
+                        }
+                		break;
+                        
+                case 2: System.out.print("\nEnter the maximum temperature in Celcius: ");   //User prompt for temperature
+            			c=input.nextDouble();
+                        if(c<0)
+                        {
+                            System.out.print("\n Celcius | Fahrenheit \n ---------------------");
+                            for(double x=0;x>=c;x-=5)
+                            {
+                            f=(9.0/5.0)*x+32;
+                            System.out.printf("\n      %.2f | %.2f",x,f);
+                            }
+                        }
+                        else
+                        {
+            			    System.out.print("\n Celcius | Fahrenheit \n ---------------------");
+                		    for(double x=0;x<=c;x+=5)
+                		    {
+                			f=(9.0/5.0)*x+32;
+                			System.out.printf("\n       %.2f | %.2f",x,f);
+                		    }
+                        }
+                		break;
+                        
+            }	//end of switch
+	}//end of main
+}//end of class
